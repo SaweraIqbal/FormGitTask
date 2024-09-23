@@ -60,7 +60,9 @@ const Register = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
+      {Object.keys(formErrors).length === 0 && isSubmit ? (<div>Register Successfully</div>) : (
+ <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
+      ) }
       <div className="w-full max-w-md bg-white p-8 rounded-md shadow-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
