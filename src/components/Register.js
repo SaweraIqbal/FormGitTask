@@ -11,11 +11,16 @@ const {name, value} = e.target;
 setFormValues({...formValues, [name] : value});
 console.log(formValues);
   }
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+  }
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <pre>{JSON.stringify(formValues,undefined,2)}</pre>
       <div className="w-full max-w-md bg-white p-8 rounded-md shadow-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
-        <form className="space-y-4">
+        <form onSubmit = {handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Username
